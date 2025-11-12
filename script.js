@@ -23,7 +23,25 @@ async function init() {
 
     repoList.innerHTML = "";
 
-    filteredRepos.forEach(repo => {
+    for (const repo of filteredRepos) {
+      // Obtener los lenguajes del repositorio
+      let languagesHTML = '';
+      try {
+        const langRes = await fetch(repo.languages_url);
+        const languages = await langRes.json();
+        const langNames = Object.keys(languages);
+        
+        if (langNames.length > 0) {
+          languagesHTML = langNames.map(lang => 
+            `<span class="pr-3 text-gray-400">${lang}</span>`
+          ).join('');
+        } else {
+          languagesHTML = '<span class="pr-3 text-gray-400">Desconocido</span>';
+        }
+      } catch (err) {
+        languagesHTML = '<span class="pr-3 text-gray-400">Error</span>';
+      }
+
       const card = document.createElement("div");
       card.className = "bg-gray-800 p-5 rounded-lg border border-gray-700 hover:border-gray-600 transition-all duration-200";
       card.innerHTML = `
@@ -34,11 +52,12 @@ async function init() {
         <p class="text-sm text-gray-400 mt-3 flex items-center gap-2">
           <span>⭐ ${repo.stargazers_count}</span>
           <span class="w-1 h-1 bg-gray-600 rounded-full"></span>
-          <span>${repo.language || "Desconocido"}</span>
-        </p>
+          ${languagesHTML}
+        </div>
+        
       `;
       repoList.appendChild(card);
-    });
+    }
   } catch (err) {
     repoList.textContent = "Error al cargar proyectos.";
   }
