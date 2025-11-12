@@ -6,12 +6,19 @@
   <title>Jose Antonio Orellana Gómez | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="text-gray-100 min-h-screen">
   <div class="max-w-3xl mx-auto p-6 rounded-xl gradient-border glass-card my-8">
     <header class="mb-10 text-center">
       <h1 id="name" class="text-4xl font-bold mb-3 text-white">Cargando...</h1>
       <p id="bio" class="text-gray-400"></p>
+      <div class="flex items-center justify-center space-x-4 mt-4">
+        <a href="mailto:antonioeelvento0123@gmail.com" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-200">
+          <i class="fas fa-envelope mr-2"></i>
+          <span>antonioeelvento0123@gmail.com</span>
+        </a>
+      </div>
     </header>
 
     <section class="mb-12">
@@ -66,25 +73,40 @@
         <!-- Frameworks y Herramientas -->
         <div class="glass-card p-6 rounded-lg">
           <h3 class="text-xl font-semibold mb-4 text-purple-400">Frameworks y Herramientas</h3>
-          <div class="grid grid-cols-2 gap-6">
-            <!-- Frameworks -->
+          <div class="grid grid-cols-3 gap-6">
+            <!-- Frameworks Backend -->
             <div>
               <h4 class="text-sm font-semibold mb-2 text-green-400">Backend</h4>
               <ul class="space-y-2 text-gray-300">
-                <li class="flex items-center space-x-2">
+                <li class="flex items-center space-x-2 tech-item">
                   <span class="text-yellow-400">▹</span>
                   <span>Laravel</span>
                 </li>
-                <li class="flex items-center space-x-2">
+                <li class="flex items-center space-x-2 tech-item">
                   <span class="text-yellow-400">▹</span>
                   <span>FastAPI</span>
                 </li>
               </ul>
-              <h4 class="text-sm font-semibold mb-2 mt-4 text-blue-400">Frontend</h4>
+            </div>
+            <!-- Frameworks Frontend -->
+            <div>
+              <h4 class="text-sm font-semibold mb-2 text-blue-400">Frontend</h4>
               <ul class="space-y-2 text-gray-300">
-                <li class="flex items-center space-x-2">
+                <li class="flex items-center space-x-2 tech-item">
                   <span class="text-yellow-400">▹</span>
                   <span>Next.js</span>
+                </li>
+                <li class="flex items-center space-x-2 tech-item">
+                  <span class="text-yellow-400">▹</span>
+                  <span>React</span>
+                </li>
+                <li class="flex items-center space-x-2 tech-item">
+                  <span class="text-yellow-400">▹</span>
+                  <span>Vue.js</span>
+                </li>
+                <li class="flex items-center space-x-2 tech-item">
+                  <span class="text-yellow-400">▹</span>
+                  <span>Ajax</span>
                 </li>
               </ul>
             </div>
@@ -117,8 +139,19 @@
   </section>
 
   <footer class="mt-12 text-center text-sm text-gray-400 pb-6">
-    © <span id="year"></span> <span id="footer-name"></span> —
-    <a id="github-link" href="#" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">GitHub</a>
+    <div class="flex items-center justify-center space-x-4 mb-2">
+      <a id="github-link" href="#" class="text-gray-300 hover:text-blue-400 transition-colors duration-200">
+        <i class="fab fa-github text-xl"></i>
+        <span class="sr-only">GitHub</span>
+      </a>
+      <a href="https://www.linkedin.com/in/jose-antonio-orellana-gomez-336830144/" class="text-gray-300 hover:text-blue-400 transition-colors duration-200">
+        <i class="fab fa-linkedin text-xl"></i>
+        <span class="sr-only">LinkedIn</span>
+      </a>
+    </div>
+    <div>
+      © <span id="year"></span> <span id="footer-name"></span>
+    </div>
   </footer>
   </div>
 
